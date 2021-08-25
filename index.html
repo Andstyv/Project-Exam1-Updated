@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EXAM BLOG</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <div class="blog-main-grid">
       <nav class="nav">
         <ul class="nav-ul">
-          <li class="nav-li">Home</li>
-          <li class="nav-li">Posts</li>
+          <li class="nav-li nav-current">Home</li>
+          <li class="nav-li"><a href="blog.html">Blog</a></li>
           <li class="nav-li">About</li>
           <li class="nav-li">Contact</li>
         </ul>
@@ -20,31 +26,37 @@
       <main class="main-container">
         <section class="header-section">
           <div class="blog-title-intro">
-            <h2>This is title</h2>
-            <p>Aliquam egestas egestas facilisis. Aliquam non malesuada enim. Quisque et sagittis turpis. Pellentesque accumsan enim metus, ut facilisis massa faucibus vel.</p>
+            <h1 class="blog-head-title">This is title</h1>
           </div>
-          <img class="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToK_Zj3pVtIGtZGnNSaJ2QxBhcpDXf0K9B_WKLsL74QR5lNDgn7HB5fzRRoc1GRc1f7cE&usqp=CAU" alt="Sherlock Holmes" />
-          <p class="para">
+          <p class="blog-head-para1">Aliquam egestas egestas facilisis. Aliquam non malesuada enim. Quisque et sagittis turpis. Pellentesque accumsan enim metus, ut facilisis massa faucibus vel.</p>
+          <img class="blog-profile-img" src="/profile_pic.jpg" alt="Sherlock Holmes" />
+          <p class="blog-head-para2">
             Suspendisse sem orci, ultricies finibus sollicitudin ac, vehicula eu quam. Cras congue elit libero, non commodo ligula posuere non. Aliquam sagittis ante nec enim dignissim convallis.
             Aenean viverra nec ex sed porta. Praesent arcu quam, venenatis id viverra eget, convallis vitae ipsum. In ut nibh turpis. Nulla nec lectus vestibulum, iaculis libero a, sollicitudin diam.
             Nunc ut odio iaculis, sagittis turpis eget, semper massa. Donec pellentesque condimentum massa a ultrices.
           </p>
         </section>
         <section class="latest-section">
-          <h3>Latest posts</h3>
+          <h2 class="blog-latest-title">Latest posts</h2>
           <ul class="posts-img-carousel">
-            <li>L</li>
-            <li>
-              <img src="https://i.picsum.photos/id/143/315/315.jpg?hmac=CELj9RFUpgTeSH-EAclh-YGwM14fJUdjah71rAARK7k" />
+            <li><i class="fas fa-chevron-circle-left"></i></li>
+            <li class="test-li">
+              <img class="test-img" src="https://i.picsum.photos/id/143/315/315.jpg?hmac=CELj9RFUpgTeSH-EAclh-YGwM14fJUdjah71rAARK7k" />
+              <div class="test-txt">This is a text</div>
             </li>
             <li><img src="https://i.picsum.photos/id/1080/315/315.jpg?hmac=iiA02EPplkzxVn9fNr1AmI71IfLWkGAwlO9Hbb-R4RQ" /></li>
             <li><img src="https://i.picsum.photos/id/873/315/315.jpg?hmac=KkyZCb0Q353JPldsqaUgrcnaWlRsSb-Vy0akq1gLAKA" /></li>
             <li><img src="https://i.picsum.photos/id/326/315/315.jpg?hmac=YJkf1JYa_xQQXCMXUSux7XKgBd3EC3cQggpyKFWFHZM" /></li>
-            <li>R</li>
+            <li><i class="fas fa-chevron-circle-right"></i></li>
           </ul>
         </section>
+        <footer>
+          <div class="footer-txt">
+            Lorem ipsum dolor sit amet, magna noluisse pertinax id vix. Dicit latine vis et, vis postulant dissentiet in, mel voluptatum interpretaris cu. Ius ea tibique suscipit delectus. An nam
+            commodo vituperata, contentiones deterruisset consequuntur ei usu. At eros habeo soluta ius, vix atqui dicunt cu. His ea errem legere suscipit.
+          </div>
+        </footer>
       </main>
-      <footer>Footer</footer>
     </div>
   </body>
 </html>
