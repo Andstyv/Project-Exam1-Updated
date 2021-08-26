@@ -2,16 +2,16 @@
 
 @font-face {
   font-family: "Typewriter";
-  src: url("/ATypewriterForMe.ttf") format("truetype");
+  src: url("/assets/fonts/ATypewriterForMe.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Euro Typewriter";
-  src: url("/EuropeanTypewriter.ttf") format("truetype");
+  src: url("/assets/fonts/EuropeanTypewriter.ttf") format("truetype");
 }
 
 body {
-  background-image: url("/cork-board.png");
+  background-image: url("/assets/img/cork-board.png");
   font-family: Euro Typewriter, sans-serif;
 }
 .blog-main-grid {
@@ -60,6 +60,7 @@ body {
   margin: 0 auto;
   box-shadow: 5px 5px rgba(0, 0, 0, 0.315);
 }
+
 @media (max-width: 768px) {
   .main-container {
     width: 95%;
@@ -199,24 +200,39 @@ body {
   flex-direction: column;
 }
 .blog-post-card {
-  border: 2px solid red;
+  border-bottom: 2px solid #cec478d5;
   padding: 15px;
   display: grid;
   grid-template-columns: 0.2fr 1fr;
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: repeat(5, auto);
 }
 .blog-post-img {
-  grid-row: 1 / 4;
+  grid-row: 1 / 6;
+  margin: 16px 32px 16px 16px;
+  border: 5px solid white;
+  height: auto;
+  width: auto;
+  max-width: 200px;
+  max-height: 200px;
 }
 .blog-post-title {
   grid-row: 1;
   grid-column: 2;
+  font-size: 28px;
 }
-
-.blog-post-date {
+.blog-post-author {
   grid-row: 2;
   grid-column: 2;
 }
+.blog-post-date {
+  grid-row: 3;
+  grid-column: 2;
+}
+.blog-post-content {
+  grid-row: 4;
+  grid-column: 2;
+}
+
 @media (max-width: 768px) {
   .blog-post-card {
     grid-template-columns: auto;

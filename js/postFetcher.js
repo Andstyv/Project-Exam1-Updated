@@ -8,11 +8,27 @@ async function getPosts(url) {
   const posts = await response.json();
 
   posts.forEach(function (post) {
+    const postContent = post.content.rendered;
+    const postLimited = postContent.slice(0, 300);
+
+    let postsDate = new Date(post.date);
+    // wordArray = postContent.split(" ")
+
+    let genRandomRotation = function (min, max) {
+      return Math.floor(Math.random() * (max - min) + min);
+    };
+    const minNumb = -5;
+    const maxNumb = 6;
+
+    let randomRotateIMG = genRandomRotation(minNumb, maxNumb);
+
     postsContainer.innerHTML += `<div class="blog-post-card">
-    <div class="blog-post-img"><img src="${randomIMG}"</img></div>
+    <div class="blog-post-img" style="transform:rotate(${randomRotateIMG}deg)"><img src="${randomIMG}"></img></div>
     <div class="blog-post-title">${post.title.rendered}</div>
-    <div class="blog-post-date">${post.date}</div>
-    <a href="blog.html?id=${post.id}">LINK</a>
+    <div class="blog-post-author" ">Author Name</div>
+    <div class="blog-post-date">${postsDate.toDateString()}</div>
+    <div class="blog-post-content">${postLimited}...</div>
+    <a href="blog_post.html?id=${post.id}">Read more</a>
 </div>`;
   });
 }
