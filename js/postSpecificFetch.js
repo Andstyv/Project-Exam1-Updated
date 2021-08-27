@@ -14,7 +14,6 @@ async function fetchBlogPost(url) {
   try {
     const response = await fetch(url);
     const post = await response.json();
-    console.log(post);
 
     let postDate = new Date(post.date);
 
@@ -28,3 +27,25 @@ async function fetchBlogPost(url) {
   }
 }
 fetchBlogPost(blogPostURL);
+
+const commentURL = "https://blog.styve.digital/wp-json/wp/v2/comments/?post=";
+const commentPostURL = commentURL + id;
+const commentGrid = document.querySelector(".blog-comments-grid");
+
+async function fetchPostComments(url) {
+  try {
+    const response = await fetch(url);
+    const comment = await response.json();
+
+    console.log(comment.length);
+
+    if (comment.length) {
+      commentGrid.innerHTML = `<div>${comment[0].content.rendered}</div>`;
+    } else {
+      commentGrid.innerHTML = `<div>This post has no comments.</div>`;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+fetchPostComments(commentPostURL);
