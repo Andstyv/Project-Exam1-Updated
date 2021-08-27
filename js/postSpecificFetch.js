@@ -35,12 +35,19 @@ const commentGrid = document.querySelector(".blog-comments-grid");
 async function fetchPostComments(url) {
   try {
     const response = await fetch(url);
-    const comment = await response.json();
+    const comments = await response.json();
 
-    console.log(comment.length);
+    console.log(comments);
 
-    if (comment.length) {
-      commentGrid.innerHTML = `<div>${comment[0].content.rendered}</div>`;
+    if (comments.length) {
+      comments.forEach(function (comment) {
+        let commentDate = new Date(comment.date);
+
+        commentGrid.innerHTML += `
+        <div>${comment.author_name}</div>
+        <div>${commentDate.toDateString()}</div>
+        <div>${comment.content.rendered}</div>`;
+      });
     } else {
       commentGrid.innerHTML = `<div>This post has no comments.</div>`;
     }
