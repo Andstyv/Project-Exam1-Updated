@@ -1,7 +1,6 @@
-const postsURL = "https://blog.styve.digital/wp-json/wp/v2/posts/";
+const postsURL = "https://blog.styve.digital/wp-json/wp/v2/posts?_embed";
 const postsContainer = document.querySelector(".blog-posts-grid");
 const loadMoreBtn = document.querySelector(".load-more-btn");
-let randomIMG = "https://picsum.photos/200";
 
 async function getPosts(url) {
   const response = await fetch(url);
@@ -10,6 +9,7 @@ async function getPosts(url) {
   posts.forEach(function (post) {
     const postContent = post.content.rendered;
     const postLimited = postContent.slice(0, 300);
+    const postIMG = post._embedded["wp:featuredmedia"][0].source_url;
 
     let postsDate = new Date(post.date);
     // wordArray = postContent.split(" ")
@@ -23,7 +23,7 @@ async function getPosts(url) {
     let randomRotateIMG = genRandomRotation(minNumb, maxNumb);
 
     postsContainer.innerHTML += `<div class="blog-post-card">
-    <div class="blog-post-img" style="transform:rotate(${randomRotateIMG}deg)"><img src="${randomIMG}"></img></div>
+    <div class="blog-posts-img-container" style="transform:rotate(${randomRotateIMG}deg)"><img class="blog-posts-img"src="${postIMG}"></img></div>
     <div class="blog-post-title">${post.title.rendered}</div>
     <div class="blog-post-author" ">Author Name</div>
     <div class="blog-post-date">${postsDate.toDateString()}</div>
@@ -35,7 +35,7 @@ async function getPosts(url) {
 getPosts(postsURL);
 
 loadMoreBtn.onclick = function () {
-  const loadMoreURL = postsURL + `?page=2`;
+  const loadMoreURL = postsURL + `&?&page=2`;
   loadMoreBtn.style.display = "none";
 
   getPosts(loadMoreURL);

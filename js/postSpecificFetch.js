@@ -29,6 +29,7 @@ async function fetchBlogPost(url) {
 fetchBlogPost(blogPostURL);
 
 const commentURL = "https://blog.styve.digital/wp-json/wp/v2/comments/?post=";
+const embedURL = "?_embed";
 const commentPostURL = commentURL + id;
 const commentGrid = document.querySelector(".blog-comments-grid");
 

@@ -206,7 +206,7 @@ body {
   grid-template-columns: 0.2fr 1fr;
   grid-template-rows: repeat(5, auto);
 }
-.blog-post-img {
+.blog-posts-img-container {
   grid-row: 1 / 6;
   margin: 16px 32px 16px 16px;
   border: 5px solid white;
@@ -214,6 +214,11 @@ body {
   width: auto;
   max-width: 200px;
   max-height: 200px;
+}
+.blog-posts-img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
 }
 .blog-post-title {
   grid-row: 1;
