@@ -39,15 +39,10 @@
         <section class="latest-section">
           <h2 class="blog-latest-title">Latest posts</h2>
           <ul class="posts-img-carousel">
-            <li><i class="fas fa-chevron-circle-left"></i></li>
-            <li class="test-li">
-              <img class="test-img" src="https://i.picsum.photos/id/143/315/315.jpg?hmac=CELj9RFUpgTeSH-EAclh-YGwM14fJUdjah71rAARK7k" />
-              <div class="test-txt">This is a text</div>
-            </li>
-            <li><img src="https://i.picsum.photos/id/1080/315/315.jpg?hmac=iiA02EPplkzxVn9fNr1AmI71IfLWkGAwlO9Hbb-R4RQ" /></li>
-            <li><img src="https://i.picsum.photos/id/873/315/315.jpg?hmac=KkyZCb0Q353JPldsqaUgrcnaWlRsSb-Vy0akq1gLAKA" /></li>
-            <li><img src="https://i.picsum.photos/id/326/315/315.jpg?hmac=YJkf1JYa_xQQXCMXUSux7XKgBd3EC3cQggpyKFWFHZM" /></li>
-            <li><i class="fas fa-chevron-circle-right"></i></li>
+            <li class="img-arrow"><i class="fas fa-chevron-circle-left" onclick="plusSlides(-1)"></i></li>
+            <div class="mySlides img-carousel-container1"></div>
+            <div class="mySlides img-carousel-container2"></div>
+            <li class="img-arrow"><i class="fas fa-chevron-circle-right" onclick="plusSlides(1)"></i></li>
           </ul>
         </section>
         <footer>
@@ -58,5 +53,6 @@
         </footer>
       </main>
     </div>
+    <script src="js/imageCarousel.js"></script>
   </body>
 </html>

@@ -151,14 +151,26 @@ body {
   align-items: center;
   padding: 0;
 }
+.img-carousel-container {
+  display: flex;
+  flex-direction: row;
+}
 .posts-img-carousel li {
-  height: auto;
+  height: 200px;
   width: auto;
   max-height: 315px;
   max-width: 315px;
 }
+.img-arrow {
+  display: flex;
+  align-items: center;
+}
 .posts-img-carousel img {
   max-width: 100%;
+  object-fit: cover;
+  height: 200px;
+  width: auto;
+  opacity: 20%;
 }
 .fas {
   color: grey;
@@ -186,12 +198,14 @@ body {
   position: relative;
   color: white;
   font-size: 32px;
+  background: linear-gradient(#000000, rgba(255, 255, 255, 0));
 }
 
 .test-txt {
   position: absolute;
   top: 8px;
   left: 16px;
+  font-size: 22px;
 }
 
 /* ----- BLOG SECTION SETTINGS ----- */
