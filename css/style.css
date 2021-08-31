@@ -155,33 +155,59 @@ body {
   display: flex;
   flex-direction: row;
 }
-.posts-img-carousel li {
-  height: 200px;
-  width: auto;
-  max-height: 315px;
-  max-width: 315px;
+.latest-blog-item {
+  position: relative;
+  color: white;
+  font-size: 32px;
+  /* background: linear-gradient(#000000, rgba(255, 255, 255, 0)); */
+}
+.latest-blog-title {
+  position: absolute;
+  color: white;
+  top: 8px;
+  left: 4px;
+  font-size: 22px;
+  padding: 2px;
+  background: rgb(95, 95, 0);
 }
 .img-arrow {
   display: flex;
   align-items: center;
-}
-.posts-img-carousel img {
-  max-width: 100%;
-  object-fit: cover;
-  height: 200px;
-  width: auto;
-  opacity: 20%;
-}
-.fas {
   color: grey;
   font-size: 32px;
   margin-left: 5px;
   margin-right: 5px;
 }
+.latest-blog-img {
+  height: 200px;
+  width: 315px;
+  max-width: 100%;
+  object-fit: cover;
+}
+.latest-blog-img:hover {
+  opacity: 75%;
+}
 
-@media (max-width: 768px) {
-  .posts-img-carousel li i {
+.slide-arrows-small {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .latest-blog-title {
+    font-size: 14px;
+    left: 0px;
+    margin-right: 5px;
+  }
+
+  .img-arrow {
     display: none;
+  }
+  .slide-arrows-small {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 32px;
+    color: grey;
+    margin-top: 20px;
   }
 }
 
@@ -194,19 +220,6 @@ body {
 }
 
 /* --- FOR TESTING PURPOSES --- */
-.test-li {
-  position: relative;
-  color: white;
-  font-size: 32px;
-  background: linear-gradient(#000000, rgba(255, 255, 255, 0));
-}
-
-.test-txt {
-  position: absolute;
-  top: 8px;
-  left: 16px;
-  font-size: 22px;
-}
 
 /* ----- BLOG SECTION SETTINGS ----- */
 .blog-posts-grid {
@@ -268,4 +281,29 @@ body {
   .blog-post-date {
     display: none;
   }
+}
+
+/* ----- CONTACT SECTION SETTINGS ----- */
+
+.contact-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+.blog-contact-label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+#validation-check {
+  display: none;
+}
+.form-error {
+  display: none;
+  position: relative;
+  top: -40px;
+  color: red;
+  margin-left: 5px;
 }

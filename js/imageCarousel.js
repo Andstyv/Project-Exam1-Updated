@@ -30,17 +30,21 @@ async function getBlogImages(url) {
   const response = await fetch(url);
   const posts = await response.json();
 
-  posts.forEach(function (post) {
-    const blogImages = post._embedded["wp:featuredmedia"][0].source_url;
-  });
-
   for (i = 0; i < 4; i++) {
-    carouselContainer1.innerHTML += `<li class="test-li"><img src="${posts[i]._embedded["wp:featuredmedia"][0].source_url}"></img>
-                                            <div class="test-txt">${posts[i].title.rendered}</div></li>`;
+    carouselContainer1.innerHTML += `<li class="latest-blog-item">
+                                    <a href="blog_post.html?id=${posts[i].id}">
+                                    <img class="latest-blog-img" src="${posts[i]._embedded["wp:featuredmedia"][0].source_url}"></img>
+                                    <div class="latest-blog-title">${posts[i].title.rendered}</div>
+                                    </a>
+                                    </li>`;
   }
   for (i = 4; i < 8; i++) {
-    carouselContainer2.innerHTML += `<li class="test-li"><img src="${posts[i]._embedded["wp:featuredmedia"][0].source_url}"></img>
-    <div class="test-txt">${posts[i].title.rendered}</div></li>`;
+    carouselContainer2.innerHTML += `<li class="latest-blog-item">
+    <a href="blog_post.html?id=${posts[i].id}">
+    <img class="latest-blog-img" src="${posts[i]._embedded["wp:featuredmedia"][0].source_url}"></img>
+    <div class="latest-blog-title">${posts[i].title.rendered}</div>
+    </a>
+    </li>`;
   }
 }
 

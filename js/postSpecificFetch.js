@@ -9,6 +9,7 @@ const blogPostURL = baseURL + id;
 const blogPostTitle = document.querySelector(".blog-post-title");
 const blogPostContent = document.querySelector(".blog-post-content");
 const blogPostDate = document.querySelector(".blog-post-date");
+const commentForm = document.querySelector(".new-comment-form");
 
 async function fetchBlogPost(url) {
   try {
@@ -38,8 +39,6 @@ async function fetchPostComments(url) {
     const response = await fetch(url);
     const comments = await response.json();
 
-    console.log(comments);
-
     if (comments.length) {
       comments.forEach(function (comment) {
         let commentDate = new Date(comment.date);
@@ -57,3 +56,38 @@ async function fetchPostComments(url) {
   }
 }
 fetchPostComments(commentPostURL);
+
+const postCommentURL = "https://blog.styve.digital/wp-json/wp/v2/comments";
+commentForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const [commentName, commentEmail, comment] = event.target.elements;
+
+  const commentData = {
+    post: id,
+    author_name: commentName.value,
+    author_email: commentEmail.value,
+    content: comment.value,
+  };
+
+  fetch(postCommentURL, {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(commentData),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response not OK");
+      }
+      return response.json();
+    })
+    .then((commentData) => {
+      console.log("Success", commentData);
+      location.reload();
+    })
+    .catch((error) => {
+      console.error("Error", error);
+    });
+});
