@@ -1,4 +1,4 @@
-const postsURL = "https://blog.styve.digital/wp-json/wp/v2/posts?_embed&?&per_page=50";
+const postsURL = "https://blog.styve.digital/wp-json/wp/v2/posts?_embed&?&per_page=50&?&categories=2";
 const carouselContainer1 = document.querySelector(".img-carousel-container1");
 const carouselContainer2 = document.querySelector(".img-carousel-container2");
 let slideIndex = 1;

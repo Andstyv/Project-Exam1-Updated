@@ -1,4 +1,4 @@
-const postsURL = "https://blog.styve.digital/wp-json/wp/v2/posts?_embed";
+const postsURL = "https://blog.styve.digital/wp-json/wp/v2/posts?_embed&?&categories=2";
 const postsContainer = document.querySelector(".blog-posts-grid");
 const loadMoreBtn = document.querySelector(".load-more-btn");
 
