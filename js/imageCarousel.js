@@ -1,7 +1,25 @@
 const postsURL = "https://blog.styve.digital/wp-json/wp/v2/posts?_embed&?&per_page=50&?&categories=2";
 const carouselContainer1 = document.querySelector(".img-carousel-container1");
 const carouselContainer2 = document.querySelector(".img-carousel-container2");
+
+const arrowLeft = document.getElementById("arrow-left");
+const arrowLeftSmall = document.getElementById("arrow-left-small");
+const arrowRight = document.getElementById("arrow-right");
+const arrowRightSmall = document.getElementById("arrow-right-small");
 let slideIndex = 1;
+
+arrowLeft.onclick = function () {
+  plusSlides(-1);
+};
+arrowLeftSmall.onclick = function () {
+  plusSlides(-1);
+};
+arrowRight.onclick = function () {
+  plusSlides(1);
+};
+arrowRightSmall.onclick = function () {
+  plusSlides(1);
+};
 
 function plusSlides(n) {
   showSlides((slideIndex += n));

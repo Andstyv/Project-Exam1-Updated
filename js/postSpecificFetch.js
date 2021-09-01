@@ -1,9 +1,8 @@
 const queryString = document.location.search;
-
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
-const baseURL = "https://blog.styve.digital/wp-json/wp/v2/posts/";
 
+const baseURL = "https://blog.styve.digital/wp-json/wp/v2/posts/";
 const blogPostURL = baseURL + id;
 
 const blogPostTitle = document.querySelector(".blog-post-title");
@@ -30,7 +29,6 @@ async function fetchBlogPost(url) {
 fetchBlogPost(blogPostURL);
 
 const commentURL = "https://blog.styve.digital/wp-json/wp/v2/comments/?post=";
-const embedURL = "?_embed";
 const commentPostURL = commentURL + id;
 const commentGrid = document.querySelector(".blog-comments-grid");
 
