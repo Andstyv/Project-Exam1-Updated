@@ -4,6 +4,8 @@ const contactForm = document.getElementById("blog-contact");
 contactForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
+  validateContactForm();
+
   const [contactName, contactEmail, contactSubject, contactMessage] = event.target.elements;
 
   const commentData = {
@@ -34,3 +36,66 @@ contactForm.addEventListener("submit", (event) => {
       console.error("Error", error);
     });
 });
+
+const contactName = document.getElementById("contactName");
+const contactEmail = document.getElementById("contactEmail");
+const contactSubject = document.getElementById("contactSubject");
+const contactMessage = document.getElementById("contactMessage");
+
+const nameError = document.getElementById("nameError");
+const emailError = document.getElementById("emailError");
+const subjError = document.getElementById("subjError");
+const msgError = document.getElementById("msgError");
+
+let namePlace = document.getElementsByName("contactName");
+let emailPlace = document.getElementsByName("email");
+let subjPlace = document.getElementsByName("subject-text");
+let msgPlace = document.getElementsByName("message-text");
+
+function validateContactForm() {
+  if (checkLength(contactName.value, 5)) {
+    contactName.style.border = "1px solid green";
+  } else {
+    namePlace[0].placeholder = "ERROR: Minimum 5 characters required";
+    contactName.value = "";
+    contactName.style.border = "1px solid red";
+  }
+
+  if (validateEmail(contactEmail.value)) {
+    contactEmail.style.border = "1px solid green";
+  } else {
+    emailPlace[0].placeholder = "ERROR: Must be a valid e-mail address";
+    contactEmail.value = "";
+    contactEmail.style.border = "1px solid red";
+  }
+
+  if (checkLength(contactSubject.value, 15)) {
+    contactSubject.style.border = "1px solid green";
+  } else {
+    subjPlace[0].placeholder = "ERROR: Minimum 15 characters required";
+    contactSubject.value = "";
+    contactSubject.style.border = "1px solid red";
+  }
+
+  if (checkLength(contactMessage.value, 25)) {
+    contactMessage.style.border = "1px solid green";
+  } else {
+    msgPlace[0].placeholder = "ERROR: Minimum 25 characters required";
+    contactMessage.value = "";
+    contactMessage.style.border = "1px solid red";
+  }
+}
+
+function checkLength(value, len) {
+  if (value.trim().length > len) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function validateEmail(email) {
+  const regEx = /\S+@\S+\.\S+/;
+  const emailMatch = regEx.test(email);
+  return emailMatch;
+}

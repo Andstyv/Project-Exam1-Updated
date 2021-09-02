@@ -1,5 +1,7 @@
 /* --- MAIN BODY & GRID SETTINGS --- */
 
+@import url("https://fonts.googleapis.com/css2?family=Exo&family=Glegoo&display=swap");
+
 @font-face {
   font-family: "Typewriter";
   src: url("/assets/fonts/ATypewriterForMe.ttf") format("truetype");
@@ -12,7 +14,7 @@
 
 body {
   background-image: url("/assets/img/cork-board.png");
-  font-family: Euro Typewriter, sans-serif;
+  font-family: "Glegoo", sans-serif;
 }
 .blog-main-grid {
   display: grid;
@@ -291,10 +293,25 @@ body {
   align-items: center;
   margin-top: 40px;
 }
+
+#blog-contact {
+  width: 300px;
+  max-width: 100%;
+}
+
 .blog-contact-label {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+}
+
+#contactName,
+#contactEmail,
+#contactSubject {
+  height: 20px;
+}
+#contactMessage {
+  height: 100px;
 }
 
 #validation-check {
@@ -303,7 +320,7 @@ body {
 .form-error {
   display: none;
   position: relative;
-  top: -40px;
+  top: -50px;
   color: red;
   margin-left: 5px;
 }
