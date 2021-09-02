@@ -1,11 +1,9 @@
 const postCommentURL = "https://blog.styve.digital/wp-json/wp/v2/comments";
 const contactForm = document.getElementById("blog-contact");
 
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+contactForm.addEventListener("submit", validateContactForm);
 
-  validateContactForm();
-
+function submitContactForm() {
   const [contactName, contactEmail, contactSubject, contactMessage] = event.target.elements;
 
   const commentData = {
@@ -35,7 +33,7 @@ contactForm.addEventListener("submit", (event) => {
     .catch((error) => {
       console.error("Error", error);
     });
-});
+}
 
 const contactName = document.getElementById("contactName");
 const contactEmail = document.getElementById("contactEmail");
@@ -52,7 +50,9 @@ let emailPlace = document.getElementsByName("email");
 let subjPlace = document.getElementsByName("subject-text");
 let msgPlace = document.getElementsByName("message-text");
 
-function validateContactForm() {
+function validateContactForm(event) {
+  event.preventDefault();
+
   if (checkLength(contactName.value, 5)) {
     contactName.style.border = "1px solid green";
   } else {
@@ -83,6 +83,12 @@ function validateContactForm() {
     msgPlace[0].placeholder = "ERROR: Minimum 25 characters required";
     contactMessage.value = "";
     contactMessage.style.border = "1px solid red";
+  }
+
+  if (checkLength(contactName.value, 5) && checkLength(contactSubject.value, 15) && checkLength(contactMessage.value, 25) && validateEmail(contactEmail.value)) {
+    submitContactForm();
+  } else {
+    console.log("ERRORRRRR");
   }
 }
 
