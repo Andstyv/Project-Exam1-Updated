@@ -161,16 +161,32 @@ body {
   position: relative;
   color: white;
   font-size: 32px;
-  /* background: linear-gradient(#000000, rgba(255, 255, 255, 0)); */
+  height: auto;
+  max-height: 200px;
+  z-index: 1;
 }
+
 .latest-blog-title {
   position: absolute;
   color: white;
-  top: 8px;
-  left: 4px;
-  font-size: 22px;
+  bottom: 0px;
+  text-align: start;
+  font-size: 18px;
   padding: 2px;
-  background: rgb(95, 95, 0);
+  z-index: 3;
+}
+
+.latest-blog-overlay {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0), black);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+}
+.latest-blog-overlay:hover {
+  background: linear-gradient(rgba(255, 255, 255, 0.25), black);
 }
 .img-arrow {
   display: flex;
@@ -185,9 +201,6 @@ body {
   width: 315px;
   max-width: 100%;
   object-fit: cover;
-}
-.latest-blog-img:hover {
-  opacity: 75%;
 }
 
 .slide-arrows-small {

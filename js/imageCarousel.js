@@ -53,6 +53,7 @@ async function getBlogImages(url) {
                                     <a href="blog_post.html?id=${posts[i].id}">
                                     <img class="latest-blog-img" src="${posts[i]._embedded["wp:featuredmedia"][0].source_url}"></img>
                                     <div class="latest-blog-title">${posts[i].title.rendered}</div>
+                                    <div class="latest-blog-overlay"></div>
                                     </a>
                                     </li>`;
   }
@@ -61,6 +62,7 @@ async function getBlogImages(url) {
     <a href="blog_post.html?id=${posts[i].id}">
     <img class="latest-blog-img" src="${posts[i]._embedded["wp:featuredmedia"][0].source_url}"></img>
     <div class="latest-blog-title">${posts[i].title.rendered}</div>
+    <div class="latest-blog-overlay"></div>
     </a>
     </li>`;
   }
