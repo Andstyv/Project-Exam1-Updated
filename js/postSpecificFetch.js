@@ -3,12 +3,14 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
 const baseURL = "https://blog.styve.digital/wp-json/wp/v2/posts/";
-const blogPostURL = baseURL + id;
+const blogPostURL = baseURL + id + "?_embed";
 
+const blogHeadImg = document.querySelector(".blog-post-header-img");
 const blogPostTitle = document.querySelector(".blog-post-title");
 const blogPostContent = document.querySelector(".blog-post-content");
 const blogPostDate = document.querySelector(".blog-post-date");
 const commentForm = document.querySelector(".new-comment-form");
+const blogPostModal = document.querySelector(".blog-post-modal");
 
 async function fetchBlogPost(url) {
   try {
@@ -16,7 +18,13 @@ async function fetchBlogPost(url) {
     const post = await response.json();
 
     let postDate = new Date(post.date);
+    const postIMG = post._embedded["wp:featuredmedia"][0].source_url;
 
+    console.log(post);
+
+    blogHeadImg.innerHTML = `<img class="blog-post-img"src=${postIMG}></img>`;
+    blogPostModal.innerHTML = `<div class="blog-post-modal-txt">Press ESC or click outside of image to close</div>
+    <img class="blog-post-modal-img"src=${postIMG}></img>`;
     blogPostTitle.innerHTML = `${post.title.rendered}`;
     blogPostContent.innerHTML = `${post.content.rendered}`;
     blogPostDate.innerHTML = `${postDate.toUTCString()}`;
@@ -40,11 +48,14 @@ async function fetchPostComments(url) {
     if (comments.length) {
       comments.forEach(function (comment) {
         let commentDate = new Date(comment.date);
+        console.log(comment.author_avatar_urls[96]);
 
-        commentGrid.innerHTML += `
-        <div>${comment.author_name}</div>
-        <div>${commentDate.toDateString()}</div>
-        <div>${comment.content.rendered}</div>`;
+        commentGrid.innerHTML += `<div class="blog-comment-container">
+        <div class="blog-comment-avatar">
+          <img class="blog-comment-avatar-img"src="${comment.author_avatar_urls[48]}"></img></div>
+        <div class="blog-comment-author">${comment.author_name}</div>
+        <div class="blog-comment-date">${commentDate.toUTCString()}</div>
+        <div class="blog-comment-content">${comment.content.rendered}</div></div>`;
       });
     } else {
       commentGrid.innerHTML = `<div>This post has no comments.</div>`;
@@ -89,3 +100,30 @@ commentForm.addEventListener("submit", (event) => {
       console.error("Error", error);
     });
 });
+
+function controlModal() {
+  const modalBackground = document.querySelector(".blog-post-modal");
+
+  blogHeadImg.onclick = function () {
+    if (blogPostModal.style.display === "block") {
+      blogPostModal.style.display = "none";
+    } else {
+      blogPostModal.style.display = "block";
+    }
+  };
+
+  modalBackground.onclick = function () {
+    if (blogPostModal.style.display === "block") {
+      blogPostModal.style.display = "none";
+    } else {
+      blogPostModal.style.display = "block";
+    }
+  };
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      blogPostModal.style.display = "none";
+    }
+  });
+}
+controlModal();

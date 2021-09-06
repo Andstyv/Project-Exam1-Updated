@@ -24,10 +24,9 @@ async function getPosts(url) {
 
     postsContainer.innerHTML += `<div class="blog-post-card">
     <div class="blog-posts-img-container" style="transform:rotate(${randomRotateIMG}deg)"><img class="blog-posts-img"src="${postIMG}"></img></div>
-    <div class="blog-post-title">${post.title.rendered}</div>
-    <div class="blog-post-author" ">Author Name</div>
-    <div class="blog-post-date">${postsDate.toDateString()}</div>
-    <div class="blog-post-content">${postLimited}...</div>
+    <div class="blog-posts-title">${post.title.rendered}</div>
+    <div class="blog-posts-date">${postsDate.toDateString()}</div>
+    <div class="blog-posts-content">${postLimited}...</div>
     <a href="blog_post.html?id=${post.id}">Read more</a>
 </div>`;
   });
