@@ -28,7 +28,7 @@ function submitContactForm() {
     })
     .then((commentData) => {
       console.log("Success", commentData);
-      location.reload();
+      contactForm.innerHTML = "Your contact form was successfully submitted.";
     })
     .catch((error) => {
       console.error("Error", error);
