@@ -29,7 +29,7 @@ function currentSlide(n) {
 }
 function showSlides(n) {
   let i;
-  const slides = document.querySelectorAll(".mySlides");
+  const slides = document.querySelectorAll(".imgSlider");
 
   if (n > slides.length) {
     slideIndex = 1;
@@ -51,7 +51,7 @@ async function getBlogImages(url) {
   for (i = 0; i < 4; i++) {
     carouselContainer1.innerHTML += `<li class="latest-blog-item">
                                     <a href="blog_post.html?id=${posts[i].id}">
-                                    <img class="latest-blog-img" src="${posts[i]._embedded["wp:featuredmedia"][0].source_url}"></img>
+                                    <img class="latest-blog-img" alt="${posts[i].title.rendered}" src="${posts[i]._embedded["wp:featuredmedia"][0].source_url}"></img>
                                     <div class="latest-blog-title">${posts[i].title.rendered}</div>
                                     <div class="latest-blog-overlay"></div>
                                     </a>

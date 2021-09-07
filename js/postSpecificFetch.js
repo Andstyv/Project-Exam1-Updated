@@ -22,9 +22,9 @@ async function fetchBlogPost(url) {
 
     console.log(post);
 
-    blogHeadImg.innerHTML = `<img class="blog-post-img"src=${postIMG}></img>`;
+    blogHeadImg.innerHTML = `<img class="blog-post-img"src=${postIMG} alt="${post.title.rendered}"></img>`;
     blogPostModal.innerHTML = `<div class="blog-post-modal-txt">Press ESC or click outside of image to close</div>
-    <img class="blog-post-modal-img"src=${postIMG}></img>`;
+    <img class="blog-post-modal-img"src=${postIMG} alt="${post.title.rendered}"></img>`;
     blogPostTitle.innerHTML = `${post.title.rendered}`;
     blogPostContent.innerHTML = `${post.content.rendered}`;
     blogPostDate.innerHTML = `${postDate.toUTCString()}`;
@@ -52,7 +52,7 @@ async function fetchPostComments(url) {
 
         commentGrid.innerHTML += `<div class="blog-comment-container">
         <div class="blog-comment-avatar">
-          <img class="blog-comment-avatar-img"src="${comment.author_avatar_urls[48]}"></img></div>
+          <img class="blog-comment-avatar-img"src="${comment.author_avatar_urls[48]}" alt="${comment.author_name} Avatar"></img></div>
         <div class="blog-comment-author">${comment.author_name}</div>
         <div class="blog-comment-date">${commentDate.toUTCString()}</div>
         <div class="blog-comment-content">${comment.content.rendered}</div></div>`;

@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Hotjar Tracking Code for https://objective-brown-e68010.netlify.app/ -->
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 2590617, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The Filing Cabinet - A blog covering secret missions" />
     <title>The Filing Cabinet</title>
     <link rel="stylesheet" href="css/style.css" />
     <link
@@ -38,12 +55,12 @@
         </section>
         <section class="latest-section">
           <h2 class="blog-latest-title">Latest posts</h2>
-          <ul class="posts-img-carousel">
-            <li class="img-arrow"><i class="fas fa-chevron-circle-left" id="arrow-left"></i></li>
-            <div class="mySlides img-carousel-container1"></div>
-            <div class="mySlides img-carousel-container2"></div>
-            <li class="img-arrow"><i class="fas fa-chevron-circle-right" id="arrow-right"></i></li>
-          </ul>
+          <div class="posts-img-carousel">
+            <div class="img-arrow"><i class="fas fa-chevron-circle-left" id="arrow-left"></i></div>
+            <ul class="imgSlider img-carousel-container1"></ul>
+            <ul class="imgSlider img-carousel-container2"></ul>
+            <div class="img-arrow"><i class="fas fa-chevron-circle-right" id="arrow-right"></i></div>
+          </div>
           <div class="slide-arrows-small">
             <i class="fas fa-chevron-circle-left" id="arrow-left-small"></i>
             <i class="fas fa-chevron-circle-right" id="arrow-right-small"></i>

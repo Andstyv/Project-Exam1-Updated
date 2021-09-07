@@ -40,8 +40,15 @@ body {
   border-radius: 10px 10px 0 0;
   margin-right: 2px;
 }
+.nav a {
+  font-family: "Glegoo", sans-serif;
+  text-decoration: none;
+  color: black;
+  font-size: 22px;
+}
 .nav-current {
   background-color: #f7f0bdd5;
+  font-size: 22px;
 }
 @media (max-width: 768px) {
   .nav {
@@ -96,13 +103,14 @@ body {
   font-size: 48px;
   grid-column: 1;
   grid-row: 1;
+  margin-bottom: 20px;
 }
 .blog-head-para1 {
-  font-size: 20px;
+  font-size: 16px;
   grid-row: 2;
 }
 .blog-head-para2 {
-  font-size: 20px;
+  font-size: 16px;
   grid-row: 3;
   grid-column: 1 / 3;
 }
@@ -111,8 +119,8 @@ body {
   margin-top: 5px;
   grid-column: 2;
   grid-row: 1 / 3;
-  height: 250px;
-  width: auto;
+  height: 265px;
+  width: 190px;
   border: 5px solid white;
   border-top: none;
   transform: rotate(3deg);
@@ -149,12 +157,11 @@ body {
 .blog-latest-title {
   margin: 0 auto;
   width: 90%;
-  margin-bottom: 20px;
+  margin-bottom: 36px;
   font-size: 36px;
 }
 .posts-img-carousel {
   display: flex;
-  list-style: none;
   width: 90%;
   margin: 0 auto;
   height: auto;
@@ -162,9 +169,12 @@ body {
   align-items: center;
   padding: 0;
 }
-.img-carousel-container {
+.img-carousel-container1,
+.img-carousel-container2 {
   display: flex;
   flex-direction: row;
+  list-style: none;
+  padding-left: 0px;
 }
 .latest-blog-item {
   position: relative;
@@ -255,6 +265,8 @@ body {
 .blog-posts-header {
   width: 90%;
   margin: 20px auto;
+  margin-top: 60px;
+  font-size: 48px;
 }
 
 .blog-post-card {
@@ -286,6 +298,9 @@ body {
 .blog-posts-date {
   font-size: 14px;
   font-style: italic;
+}
+.blog-posts-content {
+  font-size: 16px;
 }
 
 .blog-post-header-img {
@@ -416,7 +431,8 @@ body {
 }
 .blog-comment-avatar-img {
   max-width: 100%;
-  height: auto;
+  height: 48px;
+  width: 48px;
   border-radius: 50%;
 }
 
@@ -428,6 +444,8 @@ body {
   border-top: 1px solid black;
   padding-left: 10px;
   font-weight: bold;
+  background-color: white;
+  opacity: 80%;
 }
 
 .blog-comment-date {
@@ -441,6 +459,8 @@ body {
   font-size: 14px;
   padding-top: 1px;
   padding-bottom: 2px;
+  background-color: white;
+  opacity: 80%;
 }
 
 .blog-comment-content {
@@ -451,6 +471,8 @@ body {
   box-shadow: 0px 2px 10px 2px rgba(128, 128, 128, 0.5);
   font-size: 14px;
   margin-top: 10px;
+  background-color: white;
+  opacity: 70%;
 }
 .new-comment-form {
   display: flex;
@@ -460,15 +482,20 @@ body {
 }
 #commentName {
   width: 200px;
+  height: 20px;
   margin-top: 20px;
+  opacity: 80%;
 }
 #commentEmail {
   width: 200px;
+  height: 20px;
   margin-top: 10px;
+  opacity: 80%;
 }
 #comment {
   height: 100px;
   margin-top: 10px;
+  opacity: 80%;
 }
 #postComment {
   height: 25px;
@@ -508,7 +535,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 40px;
+}
+.contact-form-title {
+  margin-top: 60px;
+  font-size: 48px;
 }
 
 #blog-contact {
@@ -550,5 +580,7 @@ body {
 }
 
 .about-title {
-  margin-top: 40px;
+  margin-top: 60px;
+  font-size: 48px;
+  margin-bottom: 20px;
 }
