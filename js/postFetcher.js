@@ -1,6 +1,9 @@
 const postsURL = "https://blog.styve.digital/wp-json/wp/v2/posts?_embed&?&categories=2";
 const postsContainer = document.querySelector(".blog-posts-grid");
 const loadMoreBtn = document.querySelector(".load-more-btn");
+const searchBtn = document.querySelector(".blog-search-btn");
+const clearSearchBtn = document.querySelector(".blog-clear-btn");
+const blogPostLoader = document.querySelector(".blog-posts-loader");
 
 async function getPosts(url) {
   const response = await fetch(url);
@@ -21,7 +24,7 @@ async function getPosts(url) {
     const maxNumb = 6;
 
     let randomRotateIMG = genRandomRotation(minNumb, maxNumb);
-
+    blogPostLoader.innerHTML = "";
     postsContainer.innerHTML += `<div class="blog-post-card">
     <div class="blog-posts-img-container" style="transform:rotate(${randomRotateIMG}deg)"><img class="blog-posts-img"src="${postIMG}" alt="${post.title.rendered}"></img></div>
     <div class="blog-posts-title">${post.title.rendered}</div>
@@ -38,4 +41,21 @@ loadMoreBtn.onclick = function () {
   loadMoreBtn.style.display = "none";
 
   getPosts(loadMoreURL);
+};
+
+searchBtn.onclick = function () {
+  const searchInput = document.getElementById("blog-search").value;
+  const searchURL = postsURL + `&?&search=${searchInput}`;
+
+  console.log(searchInput);
+  console.log(searchURL);
+
+  postsContainer.innerHTML = `<div class="blog-search-noresult">Sorry. Your search did not return any results.</div>`;
+  getPosts(searchURL);
+};
+
+clearSearchBtn.onclick = function () {
+  postsContainer.innerHTML = "";
+  document.getElementById("blog-search").value = "";
+  getPosts(postsURL);
 };
