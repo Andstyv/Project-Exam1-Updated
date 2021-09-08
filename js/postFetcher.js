@@ -25,9 +25,13 @@ async function getPosts(url) {
 
     let randomRotateIMG = genRandomRotation(minNumb, maxNumb);
     blogPostLoader.innerHTML = "";
-    postsContainer.innerHTML += `<div class="blog-post-card">
+    postsContainer.innerHTML += `
+  
+    <div class="blog-post-card">
+    
     <div class="blog-posts-img-container" style="transform:rotate(${randomRotateIMG}deg)"><img class="blog-posts-img"src="${postIMG}" alt="${post.title.rendered}"></img></div>
-    <div class="blog-posts-title">${post.title.rendered}</div>
+    <a href="blog_post.html?id=${post.id}" class="blog-post-title-link">
+    <div class="blog-posts-title">${post.title.rendered}</div></a>
     <div class="blog-posts-date">${postsDate.toDateString()}</div>
     <div class="blog-posts-content">${postLimited}...</div>
     <a href="blog_post.html?id=${post.id}">Explore this blog post</a>
