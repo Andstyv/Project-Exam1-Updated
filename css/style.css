@@ -264,6 +264,14 @@ body {
   display: flex;
   flex-direction: column;
 }
+.blog-error-msg {
+  color: rgb(150, 0, 0);
+  margin: 40px auto;
+}
+
+.blog-no-results {
+  margin: 40px auto;
+}
 
 .blog-posts-header {
   margin-left: 48px;

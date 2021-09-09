@@ -6,26 +6,28 @@ const clearSearchBtn = document.querySelector(".blog-clear-btn");
 const blogPostLoader = document.querySelector(".blog-posts-loader");
 
 async function getPosts(url) {
-  const response = await fetch(url);
-  const posts = await response.json();
+  try {
+    const response = await fetch(url);
+    const posts = await response.json();
 
-  posts.forEach(function (post) {
-    const postContent = post.content.rendered;
-    const postLimited = postContent.slice(0, 300);
-    const postIMG = post._embedded["wp:featuredmedia"][0].source_url;
+    if (posts.length) {
+      posts.forEach(function (post) {
+        const postContent = post.content.rendered;
+        const postLimited = postContent.slice(0, 300);
+        const postIMG = post._embedded["wp:featuredmedia"][0].source_url;
 
-    let postsDate = new Date(post.date);
-    // wordArray = postContent.split(" ")
+        let postsDate = new Date(post.date);
 
-    let genRandomRotation = function (min, max) {
-      return Math.floor(Math.random() * (max - min) + min);
-    };
-    const minNumb = -5;
-    const maxNumb = 6;
+        let genRandomRotation = function (min, max) {
+          return Math.floor(Math.random() * (max - min) + min);
+        };
+        const minNumb = -5;
+        const maxNumb = 6;
 
-    let randomRotateIMG = genRandomRotation(minNumb, maxNumb);
-    blogPostLoader.innerHTML = "";
-    postsContainer.innerHTML += `
+        let randomRotateIMG = genRandomRotation(minNumb, maxNumb);
+        blogPostLoader.innerHTML = "";
+
+        postsContainer.innerHTML += `
   
     <div class="blog-post-card">
     
@@ -36,8 +38,18 @@ async function getPosts(url) {
     <div class="blog-posts-content">${postLimited}...</div>
     <a href="blog_post.html?id=${post.id}">Explore this blog post</a>
 </div>`;
-  });
+      });
+    } else {
+      postsContainer.innerHTML = `<div class="blog-no-results">The search returned no results.</div>`;
+    }
+  } catch (error) {
+    console.log(error);
+    blogPostLoader.innerHTML = "";
+    loadMoreBtn.style.display = "none";
+    postsContainer.innerHTML = `<div class="blog-error-msg">ERROR: ${error}</div>`;
+  }
 }
+
 getPosts(postsURL);
 
 loadMoreBtn.onclick = function () {
@@ -47,14 +59,12 @@ loadMoreBtn.onclick = function () {
   getPosts(loadMoreURL);
 };
 
-searchBtn.onclick = function () {
+searchBtn.onclick = searchBlogPosts = () => {
   const searchInput = document.getElementById("blog-search").value;
   const searchURL = postsURL + `&?&search=${searchInput}`;
 
-  console.log(searchInput);
-  console.log(searchURL);
-
-  postsContainer.innerHTML = `<div class="blog-search-noresult">Sorry. Your search did not return any results.</div>`;
+  loadMoreBtn.style.display = "none";
+  postsContainer.innerHTML = ``;
   getPosts(searchURL);
 };
 
@@ -63,3 +73,9 @@ clearSearchBtn.onclick = function () {
   document.getElementById("blog-search").value = "";
   getPosts(postsURL);
 };
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Enter" && document.getElementById("blog-search").value) {
+    searchBlogPosts();
+  }
+});
