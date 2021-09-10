@@ -36,7 +36,7 @@ async function getPosts(url) {
     <div class="blog-posts-title">${post.title.rendered}</div></a>
     <div class="blog-posts-date">${postsDate.toDateString()}</div>
     <div class="blog-posts-content">${postLimited}...</div>
-    <a href="blog_post.html?id=${post.id}">Explore this blog post</a>
+    <a href="blog_post.html?id=${post.id}" class="blog-post-explore-link">Explore this blog post</a>
 </div>`;
       });
     } else {
