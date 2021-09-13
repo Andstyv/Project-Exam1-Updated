@@ -175,8 +175,6 @@ body {
 /* --- LATEST SECTION SETTINGS --- */
 .latest-section {
   margin-top: 50px;
-  padding-bottom: 50px;
-  border-bottom: 2px solid #cec478d5;
 }
 .blog-latest-title {
   margin: 0 auto;
@@ -276,13 +274,17 @@ body {
   display: grid;
   grid-template-columns: 0.5fr 0.5fr;
   grid-template-rows: auto auto;
-  width: 70%;
+  width: 90%;
   margin: 50px auto;
+  border-top: 1px solid black;
+  margin-top: 200px;
+  padding-top: 25px;
 }
 .blog-footer-news {
   grid-row: 1;
   grid-column: 1;
   margin-right: 25px;
+  margin-left: 5%;
 }
 .footer-news-head,
 .footer-author-head {
@@ -315,6 +317,7 @@ body {
   grid-column: 2;
   grid-row: 1;
   margin-left: 25px;
+  margin-right: 5%;
 }
 .footer-author-text {
   font-size: 10px;
@@ -325,6 +328,11 @@ body {
   font-size: 10px;
   justify-self: center;
   margin-top: 50px;
+}
+@media (max-width: 768px) {
+  .blog-footer {
+    margin-top: 100px;
+  }
 }
 
 /* --- FOR TESTING PURPOSES --- */
@@ -429,6 +437,18 @@ body {
   font-size: 14px;
   font-style: italic;
 }
+.blog-post-back {
+  padding: 3px 5px;
+  background-color: rgb(255, 208, 121);
+  text-decoration: none;
+  color: black;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 10px 10px 0 0;
+  margin-left: 5%;
+  font-size: 12px;
+}
+
 .blog-posts-content {
   font-size: 16px;
 }
@@ -619,8 +639,8 @@ body {
   grid-row: 1;
   grid-column: 2;
   align-self: center;
-  border-bottom: 1px solid black;
-  border-top: 1px solid black;
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
   padding-left: 10px;
   font-weight: bold;
   background-color: white;
@@ -631,9 +651,9 @@ body {
   grid-row: 1;
   grid-column: 3;
   align-self: center;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
-  border-top: 1px solid black;
+  border-bottom: 1px solid grey;
+  border-right: 1px solid grey;
+  border-top: 1px solid grey;
   font-style: italic;
   font-size: 14px;
   padding-top: 1px;
@@ -677,12 +697,16 @@ body {
   opacity: 80%;
 }
 #postComment {
-  height: 25px;
-  margin-top: 10px;
-  background-color: #f1bb4e;
-  border: 1px solid black;
-  width: 33%;
-  margin: 10px auto;
+  align-self: center;
+  padding: 3px;
+  background-color: rgb(255, 208, 121);
+  width: 200px;
+  text-decoration: none;
+  color: black;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 10px 10px 0 0;
+  margin-top: 25px;
 }
 
 @media (max-width: 768px) {
@@ -792,6 +816,20 @@ body {
 
 .about-title {
   margin-top: 60px;
-  font-size: 36px;
+  font-size: 48px;
   margin-bottom: 20px;
+}
+
+.about-header {
+  display: flex;
+  height: 400px;
+  width: 80%;
+  margin: 50px auto;
+}
+
+.about-header-img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  border: 5px solid white;
 }
