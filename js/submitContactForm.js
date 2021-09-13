@@ -4,7 +4,7 @@ const contactForm = document.getElementById("blog-contact");
 contactForm.addEventListener("submit", validateContactForm);
 
 function submitContactForm() {
-  const [contactName, contactEmail, contactSubject, contactMessage] = event.target.elements;
+  const [contactName, contactEmail, contactSubject, contactMessage] = e.target.elements;
 
   const commentData = {
     post: 56,
@@ -88,7 +88,7 @@ function validateContactForm(event) {
   if (checkLength(contactName.value, 5) && checkLength(contactSubject.value, 15) && checkLength(contactMessage.value, 25) && validateEmail(contactEmail.value)) {
     submitContactForm();
   } else {
-    console.log("ERRORRRRR");
+    console.log("ERROR");
   }
 }
 
