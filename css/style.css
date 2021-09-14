@@ -530,6 +530,9 @@ body {
     grid-template-rows: auto auto;
     margin: 20px auto;
   }
+  .blog-post-img {
+    width: 200px;
+  }
   .blog-search-label {
     grid-row: 1;
     grid-column: 1 / 3;
@@ -596,9 +599,14 @@ body {
   margin: auto;
   display: block;
   width: 50%;
-  max-width: 500px;
+  max-width: 800px;
 }
 
+@media (max-width: 768px) {
+  .blog-post-modal-img {
+    width: 95%;
+  }
+}
 /* ----- BLOG COMMENTS SECTION ----- */
 
 .blog-post-comments {
@@ -698,6 +706,7 @@ body {
 }
 #postComment {
   align-self: center;
+  cursor: pointer;
   padding: 3px;
   background-color: rgb(255, 208, 121);
   width: 200px;
@@ -830,6 +839,7 @@ body {
 .about-header-img {
   object-fit: cover;
   width: 100%;
+  height: 400px;
   height: auto;
   border: 5px solid white;
 }
