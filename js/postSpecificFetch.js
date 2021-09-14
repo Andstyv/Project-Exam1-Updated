@@ -112,13 +112,13 @@ function controlModal() {
     }
   };
 
-  // modalBackground.onclick = function () {
-  //   if (blogPostModal.style.display === "block") {
-  //     blogPostModal.style.display = "none";
-  //   } else {
-  //     blogPostModal.style.display = "block";
-  //   }
-  // };
+  modalBackground.onclick = function () {
+    if (blogPostModal.style.display === "block") {
+      blogPostModal.style.display = "none";
+    } else {
+      blogPostModal.style.display = "block";
+    }
+  };
 
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {

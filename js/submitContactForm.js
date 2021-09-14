@@ -4,7 +4,7 @@ const contactForm = document.getElementById("blog-contact");
 contactForm.addEventListener("submit", validateContactForm);
 
 function submitContactForm() {
-  const [contactName, contactEmail, contactSubject, contactMessage] = e.target.elements;
+  const [contactName, contactEmail, contactSubject, contactMessage] = event.target.elements;
 
   const commentData = {
     post: 56,

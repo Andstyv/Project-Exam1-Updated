@@ -523,7 +523,7 @@ body {
 @media (max-width: 768px) {
   .blog-posts-header {
     font-size: 36px;
-    margin: 36px auto 10px auto;
+    margin: 50px auto 10px auto;
   }
   .blog-search-container {
     grid-template-columns: auto auto;
@@ -703,6 +703,7 @@ body {
   height: 100px;
   margin-top: 10px;
   opacity: 80%;
+  margin-left: 0px;
 }
 #postComment {
   align-self: center;
@@ -813,6 +814,7 @@ body {
 @media (max-width: 768px) {
   .contact-form-title {
     font-size: 36px;
+    margin-top: 50px;
   }
 }
 
@@ -842,4 +844,11 @@ body {
   height: 400px;
   height: auto;
   border: 5px solid white;
+}
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 36px;
+    margin-top: 50px;
+    text-align: center;
+  }
 }
