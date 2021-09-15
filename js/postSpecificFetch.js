@@ -97,13 +97,14 @@ commentForm.addEventListener("submit", (event) => {
       location.reload();
     })
     .catch((error) => {
-      console.error("Error", error);
+      console.log(error);
     });
 });
 
 function controlModal() {
   const modalBackground = document.querySelector(".blog-post-modal");
 
+  //For desktop users:
   blogHeadImg.onclick = function () {
     if (blogPostModal.style.display === "block") {
       blogPostModal.style.display = "none";
@@ -112,6 +113,7 @@ function controlModal() {
     }
   };
 
+  //For mobile devices:
   modalBackground.onclick = function () {
     if (blogPostModal.style.display === "block") {
       blogPostModal.style.display = "none";

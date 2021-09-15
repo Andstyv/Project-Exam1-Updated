@@ -33,6 +33,6 @@ function submitContactForm(e) {
       newsletterForm.innerHTML = `<div class="footer-news-success">Thank you for subscribing!</div>`;
     })
     .catch((error) => {
-      console.error(error);
+      console.log(error);
     });
 }

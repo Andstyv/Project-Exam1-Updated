@@ -59,7 +59,16 @@ loadMoreBtn.onclick = function () {
   getPosts(loadMoreURL);
 };
 
-searchBtn.onclick = searchBlogPosts = () => {
+function searchBlogPosts() {
+  const searchInput = document.getElementById("blog-search").value;
+  const searchURL = postsURL + `&?&search=${searchInput}`;
+
+  loadMoreBtn.style.display = "none";
+  postsContainer.innerHTML = ``;
+  getPosts(searchURL);
+}
+
+searchBtn.onclick = function searchBlogPosts() {
   const searchInput = document.getElementById("blog-search").value;
   const searchURL = postsURL + `&?&search=${searchInput}`;
 

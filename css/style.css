@@ -1,19 +1,8 @@
 /* --- MAIN BODY & GRID SETTINGS --- */
 
-@import url("https://fonts.googleapis.com/css2?family=Exo&family=Glegoo&display=swap");
-
-@font-face {
-  font-family: "Typewriter";
-  src: url("/assets/fonts/ATypewriterForMe.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Euro Typewriter";
-  src: url("/assets/fonts/EuropeanTypewriter.ttf") format("truetype");
-}
-
 body {
   background-image: url("/assets/img/cork-board.png");
+  /* Background pattern from Toptal Subtle Patterns */
   font-family: "Glegoo", sans-serif;
 }
 .blog-main-grid {
@@ -27,12 +16,11 @@ body {
   width: 70%;
   max-width: 1400px;
 }
-.nav-ul {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 0;
-  margin-left: 20px;
+.nav a {
+  font-family: "Glegoo", sans-serif;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
 }
 .nav-li {
   background-color: #d4cea2d8;
@@ -40,16 +28,18 @@ body {
   border-radius: 10px 10px 0 0;
   margin-right: 2px;
 }
-.nav a {
-  font-family: "Glegoo", sans-serif;
-  text-decoration: none;
-  color: black;
-  font-size: 18px;
+.nav-ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0;
+  margin-left: 20px;
 }
 .nav-current {
   background-color: #f7f0bdd5;
   font-size: 18px;
 }
+
 @media (max-width: 768px) {
   .nav {
     margin-left: 20px;
@@ -75,7 +65,7 @@ body {
   max-width: 1400px;
   margin: 0 auto;
   box-shadow: 5px 5px rgba(0, 0, 0, 0.315);
-  opacity: 100%;
+  opacity: 1;
   min-height: 80vh;
 }
 
@@ -90,8 +80,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 0.5fr;
   grid-template-rows: repeat(2, auto);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
   height: auto;
   width: 90%;
   margin: 0 auto;
@@ -164,11 +152,17 @@ body {
   opacity: 0.1;
   left: 22.5%;
   top: 500px;
+  max-width: 1400px;
 }
 @media (max-width: 768px) {
   .blog-classified-img {
     width: 75%;
     left: 10%;
+  }
+}
+@media (min-width: 2560px) {
+  .blog-classified-img {
+    display: none;
   }
 }
 
@@ -276,7 +270,7 @@ body {
   grid-template-rows: auto auto;
   width: 90%;
   margin: 50px auto;
-  border-top: 1px solid black;
+  border-top: 1px solid #cec478d5;
   margin-top: 200px;
   padding-top: 25px;
 }
@@ -312,6 +306,9 @@ body {
 }
 .footer-news-success {
   margin-left: 15px;
+  font-style: italic;
+  font-size: 12px;
+  margin-top: 15px;
 }
 .blog-footer-author {
   grid-column: 2;
@@ -335,12 +332,11 @@ body {
   }
 }
 
-/* --- FOR TESTING PURPOSES --- */
-
 /* ----- BLOG SECTION SETTINGS ----- */
 .blog-posts-grid {
   display: flex;
   flex-direction: column;
+  min-height: 400px;
 }
 .blog-error-msg {
   color: rgb(150, 0, 0);
@@ -652,7 +648,7 @@ body {
   padding-left: 10px;
   font-weight: bold;
   background-color: white;
-  opacity: 80%;
+  opacity: 0.8;
 }
 
 .blog-comment-date {
@@ -667,7 +663,7 @@ body {
   padding-top: 1px;
   padding-bottom: 2px;
   background-color: white;
-  opacity: 80%;
+  opacity: 0.8;
 }
 
 .blog-comment-content {
@@ -679,7 +675,7 @@ body {
   font-size: 14px;
   margin-top: 10px;
   background-color: white;
-  opacity: 70%;
+  opacity: 0.8;
 }
 .new-comment-form {
   display: flex;
@@ -691,18 +687,18 @@ body {
   width: 200px;
   height: 20px;
   margin-top: 20px;
-  opacity: 80%;
+  opacity: 0.8;
 }
 #commentEmail {
   width: 200px;
   height: 20px;
   margin-top: 10px;
-  opacity: 80%;
+  opacity: 0.8;
 }
 #comment {
   height: 100px;
   margin-top: 10px;
-  opacity: 80%;
+  opacity: 0.8;
   margin-left: 0px;
 }
 #postComment {
@@ -773,6 +769,7 @@ body {
   max-width: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 400px;
 }
 
 .blog-contact-label {

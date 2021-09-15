@@ -40,11 +40,6 @@ const contactEmail = document.getElementById("contactEmail");
 const contactSubject = document.getElementById("contactSubject");
 const contactMessage = document.getElementById("contactMessage");
 
-const nameError = document.getElementById("nameError");
-const emailError = document.getElementById("emailError");
-const subjError = document.getElementById("subjError");
-const msgError = document.getElementById("msgError");
-
 let namePlace = document.getElementsByName("contactName");
 let emailPlace = document.getElementsByName("email");
 let subjPlace = document.getElementsByName("subject-text");

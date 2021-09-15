@@ -6,43 +6,42 @@ const arrowLeft = document.getElementById("arrow-left");
 const arrowLeftSmall = document.getElementById("arrow-left-small");
 const arrowRight = document.getElementById("arrow-right");
 const arrowRightSmall = document.getElementById("arrow-right-small");
-let slideIndex = 1;
+let carouselIndex = 1;
+let i = 0;
 
 arrowLeft.onclick = function () {
-  plusSlides(-1);
+  slideCarousel(-1);
 };
 arrowLeftSmall.onclick = function () {
-  plusSlides(-1);
+  slideCarousel(-1);
 };
+
 arrowRight.onclick = function () {
-  plusSlides(1);
+  slideCarousel(1);
 };
 arrowRightSmall.onclick = function () {
-  plusSlides(1);
+  slideCarousel(1);
 };
 
-function plusSlides(n) {
-  showSlides((slideIndex += n));
+function slideCarousel(n) {
+  showCarouselImages((carouselIndex += n));
 }
-function currentSlide(n) {
-  showSlides((slideIndex = n));
-}
-function showSlides(n) {
-  let i;
-  const slides = document.querySelectorAll(".imgSlider");
 
-  if (n > slides.length) {
-    slideIndex = 1;
+function showCarouselImages(n) {
+  const blogImages = document.querySelectorAll(".img-carousel");
+
+  if (n > blogImages.length) {
+    carouselIndex = 1;
   }
   if (n < 1) {
-    slideIndex = slides.length;
+    carouselIndex = blogImages.length;
   }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  for (i = 0; i < blogImages.length; i++) {
+    blogImages[i].style.display = "none";
   }
-  slides[slideIndex - 1].style.display = "flex";
+  blogImages[carouselIndex - 1].style.display = "flex";
 }
-showSlides(slideIndex);
+showCarouselImages(carouselIndex);
 
 async function getBlogImages(url) {
   const response = await fetch(url);
