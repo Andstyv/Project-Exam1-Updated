@@ -1,5 +1,6 @@
 const postCommentURL = "https://blog.styve.digital/wp-json/wp/v2/comments";
 const contactForm = document.getElementById("blog-contact");
+const successIcon = document.getElementById("form-success-check");
 
 contactForm.addEventListener("submit", validateContactForm);
 
@@ -28,10 +29,12 @@ function submitContactForm() {
     })
     .then((commentData) => {
       console.log("Success", commentData);
+      successIcon.style.display = "block";
+      contactForm.style.fontStyle = "italic";
       contactForm.innerHTML = "Your contact form was successfully submitted.";
     })
     .catch((error) => {
-      console.error("Error", error);
+      console.error(error);
     });
 }
 
@@ -40,55 +43,53 @@ const contactEmail = document.getElementById("contactEmail");
 const contactSubject = document.getElementById("contactSubject");
 const contactMessage = document.getElementById("contactMessage");
 
-let namePlace = document.getElementsByName("contactName");
-let emailPlace = document.getElementsByName("email");
-let subjPlace = document.getElementsByName("subject-text");
-let msgPlace = document.getElementsByName("message-text");
+const nameError = document.getElementById("nameError");
+const emailError = document.getElementById("emailError");
+const subjError = document.getElementById("subjError");
+const msgError = document.getElementById("msgError");
 
 function validateContactForm(event) {
   event.preventDefault();
 
   if (checkLength(contactName.value, 5)) {
-    contactName.style.border = "1px solid green";
+    contactName.style.border = "2px solid 60ab60";
+    nameError.innerHTML = "";
   } else {
-    namePlace[0].placeholder = "ERROR: Minimum 5 characters required";
-    contactName.value = "";
-    contactName.style.border = "1px solid red";
+    nameError.innerHTML = "Enter a valid name (min. 5 char.)";
+    contactName.style.border = "2px solid #ff7a7a";
   }
 
   if (validateEmail(contactEmail.value)) {
-    contactEmail.style.border = "1px solid green";
+    contactEmail.style.border = "2px solid 60ab60";
+    emailError.innerHTML = "";
   } else {
-    emailPlace[0].placeholder = "ERROR: Must be a valid e-mail address";
-    contactEmail.value = "";
-    contactEmail.style.border = "1px solid red";
+    emailError.innerHTML = "Enter a valid e-mail address";
+    contactEmail.style.border = "2px solid #ff7a7a";
   }
 
   if (checkLength(contactSubject.value, 15)) {
-    contactSubject.style.border = "1px solid green";
+    contactSubject.style.border = "2px solid 60ab60";
+    subjError.innerHTML = "";
   } else {
-    subjPlace[0].placeholder = "ERROR: Minimum 15 characters required";
-    contactSubject.value = "";
-    contactSubject.style.border = "1px solid red";
+    subjError.innerHTML = "Enter a valid subject (min. 15 char.)";
+    contactSubject.style.border = "2px solid #ff7a7a";
   }
 
   if (checkLength(contactMessage.value, 25)) {
-    contactMessage.style.border = "1px solid green";
+    contactMessage.style.border = "1px solid 60ab60";
+    msgError.innerHTML = "";
   } else {
-    msgPlace[0].placeholder = "ERROR: Minimum 25 characters required";
-    contactMessage.value = "";
-    contactMessage.style.border = "1px solid red";
+    msgError.innerHTML = "Enter a valid message (min. 25 char.)";
+    contactMessage.style.border = "1px solid #ff7a7a";
   }
 
   if (checkLength(contactName.value, 5) && checkLength(contactSubject.value, 15) && checkLength(contactMessage.value, 25) && validateEmail(contactEmail.value)) {
     submitContactForm();
-  } else {
-    console.log("ERROR");
   }
 }
 
 function checkLength(value, len) {
-  if (value.trim().length > len) {
+  if (value.trim().length >= len) {
     return true;
   } else {
     return false;
