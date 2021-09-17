@@ -53,6 +53,19 @@ body {
     padding: 5px 10px 2.5px 10px;
   }
 }
+@media (max-width: 368px) {
+  .nav {
+    margin-left: 10px;
+  }
+  .nav-ul {
+    margin-left: 0;
+    padding-left: 2px;
+    font-size: 12px;
+  }
+  .nav-li {
+    padding: 5px 5px 2.5px 5px;
+  }
+}
 
 /* --- MAIN CONTAINER SETTINGS --- */
 
@@ -261,6 +274,21 @@ body {
     margin-top: 10px;
   }
 }
+@media (max-width: 500px) {
+  .latest-blog-title {
+    font-size: 12px;
+    left: 0px;
+    margin-right: 5px;
+  }
+}
+
+@media (max-width: 400px) {
+  .latest-blog-title {
+    font-size: 10px;
+    left: 0px;
+    margin-right: 5px;
+  }
+}
 
 /* --- FOOTER SETTINGS --- */
 
@@ -285,7 +313,7 @@ body {
   font-size: 14px;
 }
 .footer-news-text {
-  font-size: 10px;
+  font-size: 12px;
 }
 .footer-news-input {
   margin-top: 10px;
@@ -317,18 +345,36 @@ body {
   margin-right: 5%;
 }
 .footer-author-text {
-  font-size: 10px;
+  font-size: 12px;
 }
 .blog-footer-end {
   grid-column: 1/ 3;
   grid-row: 2;
-  font-size: 10px;
+  font-size: 12px;
   justify-self: center;
   margin-top: 50px;
 }
 @media (max-width: 768px) {
   .blog-footer {
     margin-top: 100px;
+  }
+}
+@media (max-width: 400px) {
+  .blog-footer {
+    grid-template-rows: auto auto auto;
+  }
+  .blog-footer-author {
+    grid-column: 1 /3;
+    grid-row: 1;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .blog-footer-news {
+    grid-column: 1/3;
+    grid-row: 2;
+  }
+  .blog-footer-end {
+    grid-row: 3;
   }
 }
 
@@ -571,6 +617,24 @@ body {
   .blog-posts-date {
     align-self: center;
   }
+  .blog-post-content {
+    font-size: 14px;
+  }
+}
+@media (max-width: 368px) {
+  .blog-posts-header {
+    font-size: 30px;
+    margin: 50px auto 10px auto;
+  }
+  .blog-posts-title {
+    font-size: 20px;
+  }
+  .blog-posts-content {
+    font-size: 12px;
+  }
+  .blog-post-explore-link {
+    font-size: 14px;
+  }
 }
 
 /* --- BLOG POST MODAL --- */
@@ -793,6 +857,7 @@ body {
   display: block;
   color: red;
   height: 32px;
+  font-size: 12px;
 }
 #blog-contact-submit {
   align-self: center;
@@ -817,6 +882,14 @@ body {
   .contact-form-title {
     font-size: 36px;
     margin-top: 50px;
+  }
+}
+@media (max-width: 368px) {
+  #blog-contact {
+    width: 250px;
+  }
+  .form-error {
+    font-size: 12px;
   }
 }
 
@@ -850,6 +923,19 @@ body {
 @media (max-width: 768px) {
   .about-title {
     font-size: 36px;
+    margin-top: 50px;
+    text-align: center;
+  }
+  .about-text-1,
+  .about-text-2,
+  .about-text-3,
+  .about-text-4 {
+    font-size: 14px;
+  }
+}
+@media (max-width: 368px) {
+  .about-title {
+    font-size: 30px;
     margin-top: 50px;
     text-align: center;
   }
