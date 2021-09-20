@@ -20,8 +20,6 @@ async function fetchBlogPost(url) {
     let postDate = new Date(post.date);
     const postIMG = post._embedded["wp:featuredmedia"][0].source_url;
 
-    console.log(post);
-
     blogHeadImg.innerHTML = `<img class="blog-post-img"src=${postIMG} alt="${post.title.rendered}"></img>`;
     blogPostModal.innerHTML = `<div class="blog-post-modal-txt">Press ESC or click outside of image to close</div>
     <img class="blog-post-modal-img"src=${postIMG} alt="${post.title.rendered}"></img>`;
@@ -48,7 +46,6 @@ async function fetchPostComments(url) {
     if (comments.length) {
       comments.forEach(function (comment) {
         let commentDate = new Date(comment.date);
-        console.log(comment.author_avatar_urls[96]);
 
         commentGrid.innerHTML += `<div class="blog-comment-container">
         <div class="blog-comment-avatar">
