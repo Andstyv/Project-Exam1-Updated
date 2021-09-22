@@ -56,7 +56,7 @@ function validateContactForm(event) {
   event.preventDefault();
 
   if (checkLength(contactName.value, 5)) {
-    contactName.style.border = "2px solid 60ab60";
+    contactName.style.border = "2px solid #60ab60";
     nameError.innerHTML = "";
   } else {
     nameError.innerHTML = "Enter a valid name (min. 5 char.)";
@@ -64,7 +64,7 @@ function validateContactForm(event) {
   }
 
   if (validateEmail(contactEmail.value)) {
-    contactEmail.style.border = "2px solid 60ab60";
+    contactEmail.style.border = "2px solid #60ab60";
     emailError.innerHTML = "";
   } else {
     emailError.innerHTML = "Enter a valid e-mail address";
@@ -72,7 +72,7 @@ function validateContactForm(event) {
   }
 
   if (checkLength(contactSubject.value, 15)) {
-    contactSubject.style.border = "2px solid 60ab60";
+    contactSubject.style.border = "2px solid #60ab60";
     subjError.innerHTML = "";
   } else {
     subjError.innerHTML = "Enter a valid subject (min. 15 char.)";
@@ -80,7 +80,7 @@ function validateContactForm(event) {
   }
 
   if (checkLength(contactMessage.value, 25)) {
-    contactMessage.style.border = "1px solid 60ab60";
+    contactMessage.style.border = "1px solid #60ab60";
     msgError.innerHTML = "";
   } else {
     msgError.innerHTML = "Enter a valid message (min. 25 char.)";
