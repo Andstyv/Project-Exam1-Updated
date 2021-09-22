@@ -212,6 +212,7 @@ body {
   height: auto;
   max-height: 200px;
   z-index: 1;
+  border: 1px solid #000;
 }
 
 .latest-blog-title {
@@ -279,6 +280,9 @@ body {
     font-size: 12px;
     left: 0px;
     margin-right: 5px;
+  }
+  .latest-blog-item {
+    border: 1px solid #000;
   }
 }
 
