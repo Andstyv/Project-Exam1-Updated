@@ -362,10 +362,6 @@ body {
 @media (max-width: 768px) {
   .blog-footer {
     margin-top: 100px;
-  }
-}
-@media (max-width: 400px) {
-  .blog-footer {
     grid-template-rows: auto auto auto;
   }
   .blog-footer-author {
@@ -377,6 +373,7 @@ body {
   .blog-footer-news {
     grid-column: 1/3;
     grid-row: 2;
+    margin-top: 20px;
   }
   .blog-footer-end {
     grid-row: 3;
