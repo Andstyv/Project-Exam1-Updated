@@ -240,7 +240,7 @@ body {
 .img-arrow {
   display: flex;
   align-items: center;
-  color: grey;
+  color: #7e7e7e;
   font-size: 32px;
   margin-left: 5px;
   margin-right: 5px;
@@ -271,7 +271,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     font-size: 32px;
-    color: grey;
+    color: #7e7e7e;
     margin-top: 10px;
   }
 }
@@ -327,7 +327,7 @@ body {
 .footer-news-btn {
   align-self: center;
   margin-top: 10px;
-  background-color: rgb(255, 208, 121);
+  background-color: #ffd079;
   max-width: 100px;
   width: 100%;
   text-decoration: none;
@@ -387,7 +387,7 @@ body {
   min-height: 400px;
 }
 .blog-error-msg {
-  color: rgb(150, 0, 0);
+  color: #960000;
   margin: 40px auto;
 }
 
@@ -483,7 +483,7 @@ body {
 }
 .blog-post-back {
   padding: 3px 5px;
-  background-color: rgb(255, 208, 121);
+  background-color: #ffd079;
   text-decoration: none;
   color: #000;
   border: none;
@@ -543,7 +543,7 @@ body {
 .blog-post-explore-link {
   align-self: center;
   padding: 3px;
-  background-color: rgb(255, 208, 121);
+  background-color: #ffd079;
   width: 200px;
   text-decoration: none;
   text-align: center;
@@ -556,7 +556,7 @@ body {
   cursor: pointer;
   align-self: center;
   padding: 3px;
-  background-color: rgb(255, 208, 121);
+  background-color: #ffd079;
   width: 200px;
   text-decoration: none;
   color: #000;
@@ -710,8 +710,8 @@ body {
   grid-row: 1;
   grid-column: 2;
   align-self: center;
-  border-bottom: 1px solid grey;
-  border-top: 1px solid grey;
+  border-bottom: 1px solid #7e7e7e;
+  border-top: 1px solid #7e7e7e;
   padding-left: 10px;
   font-weight: bold;
   background-color: #fff;
@@ -722,9 +722,9 @@ body {
   grid-row: 1;
   grid-column: 3;
   align-self: center;
-  border-bottom: 1px solid grey;
-  border-right: 1px solid grey;
-  border-top: 1px solid grey;
+  border-bottom: 1px solid #7e7e7e;
+  border-right: 1px solid #7e7e7e;
+  border-top: 1px solid #7e7e7e;
   font-style: italic;
   font-size: 14px;
   padding-top: 1px;
@@ -772,7 +772,7 @@ body {
   align-self: center;
   cursor: pointer;
   padding: 3px;
-  background-color: rgb(255, 208, 121);
+  background-color: #ffd079;
   width: 200px;
   text-decoration: none;
   color: #000;
@@ -782,7 +782,7 @@ body {
   margin-top: 25px;
 }
 .comment-error {
-  color: red;
+  color: #f00;
   font-size: 12px;
   margin-bottom: 0;
   height: 21px;
@@ -814,7 +814,7 @@ body {
     border: none;
     padding-left: 10px;
     padding-right: 10px;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid #7e7e7e;
     width: 75%;
   }
   .blog-comment-content {
@@ -864,7 +864,7 @@ body {
 }
 .form-error {
   display: block;
-  color: red;
+  color: #f00;
   height: 32px;
   font-size: 12px;
 }
@@ -872,7 +872,7 @@ body {
   align-self: center;
   padding: 3px;
   margin-top: 25px;
-  background-color: rgb(255, 208, 121);
+  background-color: #ffd079;
   width: 200px;
   text-decoration: none;
   color: #000;
