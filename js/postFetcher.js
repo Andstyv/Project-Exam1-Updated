@@ -49,7 +49,6 @@ async function getPosts(url) {
     postsContainer.innerHTML = `<div class="blog-error-msg">ERROR: ${error}</div>`;
   }
 }
-
 getPosts(postsURL);
 
 loadMoreBtn.onclick = function () {
@@ -68,13 +67,10 @@ function searchBlogPosts() {
   getPosts(searchURL);
 }
 
-searchBtn.onclick = function searchBlogPosts() {
-  const searchInput = document.getElementById("blog-search").value;
-  const searchURL = postsURL + `&?&search=${searchInput}`;
-
-  loadMoreBtn.style.display = "none";
-  postsContainer.innerHTML = ``;
-  getPosts(searchURL);
+searchBtn.onclick = function () {
+  if (document.getElementById("blog-search").value) {
+    searchBlogPosts();
+  }
 };
 
 clearSearchBtn.onclick = function () {

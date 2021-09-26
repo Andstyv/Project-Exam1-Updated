@@ -27,6 +27,7 @@ async function fetchBlogPost(url) {
     blogPostContent.innerHTML = `${post.content.rendered}`;
     blogPostDate.innerHTML = `${postDate.toUTCString()}`;
     document.title = `Blog Post | ${post.title.rendered}`;
+    document.meta;
   } catch (error) {
     console.log(error);
     blogPostContent.innerHTML = `An error occured when calling the API: ${error}`;
@@ -64,7 +65,7 @@ async function fetchPostComments(url) {
 fetchPostComments(commentPostURL);
 
 const postCommentURL = "https://blog.styve.digital/wp-json/wp/v2/comments";
-commentForm.addEventListener("submit", (event) => {
+commentForm.addEventListener("submit", (event)) = function postNewComment () {
   event.preventDefault();
 
   const [commentName, commentEmail, comment] = event.target.elements;
@@ -96,7 +97,7 @@ commentForm.addEventListener("submit", (event) => {
     .catch((error) => {
       console.log(error);
     });
-});
+};
 
 function controlModal() {
   const modalBackground = document.querySelector(".blog-post-modal");

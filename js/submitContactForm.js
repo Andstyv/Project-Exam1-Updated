@@ -2,8 +2,7 @@ const postCommentURL = "https://blog.styve.digital/wp-json/wp/v2/comments";
 const contactForm = document.getElementById("blog-contact");
 const successIcon = document.getElementById("form-success-check");
 
-// SUBMIT CONTTACT FORM FUNCTION
-
+// SUBMIT CONTACT FORM FUNCTION
 contactForm.addEventListener("submit", validateContactForm);
 
 function submitContactForm() {
@@ -40,8 +39,7 @@ function submitContactForm() {
     });
 }
 
-// FORM VALIDATION FUNCTION
-
+// FORM VALIDATION
 const contactName = document.getElementById("contactName");
 const contactEmail = document.getElementById("contactEmail");
 const contactSubject = document.getElementById("contactSubject");
@@ -107,7 +105,6 @@ function validateEmail(email) {
 }
 
 // SUBSCRIBE TO NEWSLETTER FUNCTION
-
 const newsletterURL = "https://blog.styve.digital/wp-json/wp/v2/comments";
 const newsletterForm = document.querySelector(".footer-news-form");
 
