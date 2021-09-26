@@ -65,7 +65,9 @@ async function fetchPostComments(url) {
 fetchPostComments(commentPostURL);
 
 const postCommentURL = "https://blog.styve.digital/wp-json/wp/v2/comments";
-commentForm.addEventListener("submit", (event)) = function postNewComment () {
+commentForm.addEventListener("submit", validateCommentForm);
+
+function submitCommentForm(event) {
   event.preventDefault();
 
   const [commentName, commentEmail, comment] = event.target.elements;
@@ -97,12 +99,58 @@ commentForm.addEventListener("submit", (event)) = function postNewComment () {
     .catch((error) => {
       console.log(error);
     });
-};
+}
+
+const commentName = document.getElementById("commentName");
+const commentEmail = document.getElementById("commentEmail");
+const commentMessage = document.getElementById("comment-msg");
+
+const commentNameError = document.getElementById("comment-name-err");
+const commentEmailError = document.getElementById("comment-mail-err");
+const commentMsgError = document.getElementById("comment-msg-err");
+
+function validateCommentForm(event) {
+  event.preventDefault();
+
+  if (checkLength(commentName.value, 5)) {
+    commentNameError.innerHTML = "";
+  } else {
+    commentNameError.innerHTML = "Enter a valid name (min. 5 char.)";
+  }
+
+  if (validateEmail(commentEmail.value)) {
+    commentEmailError.innerHTML = "";
+  } else {
+    commentEmailError.innerHTML = "Enter a valid email address";
+  }
+
+  if (checkLength(commentMessage.value, 10)) {
+    commentMsgError.innerHTML = "";
+  } else {
+    commentMsgError.innerHTML = "Enter a valid comment (min. 10 char.)";
+  }
+
+  if (checkLength(commentName.value, 5) && checkLength(commentMessage.value, 10) && validateEmail(commentEmail.value)) {
+    submitCommentForm(event);
+  }
+}
+
+function checkLength(value, len) {
+  if (value.trim().length >= len) {
+    return true;
+  } else {
+    return false;
+  }
+}
+function validateEmail(email) {
+  const regEx = /\S+@\S+\.\S+/;
+  const emailMatch = regEx.test(email);
+  return emailMatch;
+}
 
 function controlModal() {
   const modalBackground = document.querySelector(".blog-post-modal");
 
-  //For desktop users:
   blogHeadImg.onclick = function () {
     if (blogPostModal.style.display === "block") {
       blogPostModal.style.display = "none";
@@ -111,7 +159,6 @@ function controlModal() {
     }
   };
 
-  //For mobile devices:
   modalBackground.onclick = function () {
     if (blogPostModal.style.display === "block") {
       blogPostModal.style.display = "none";

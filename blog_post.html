@@ -35,8 +35,11 @@
           <div class="blog-comments-grid"></div>
           <form class="new-comment-form">
             <input type="text" id="commentName" placeholder="Name" />
+            <div class="comment-error" id="comment-name-err"></div>
             <input type="email" id="commentEmail" placeholder="E-mail" />
-            <textarea id="comment" placeholder="Comment"></textarea>
+            <div class="comment-error" id="comment-mail-err"></div>
+            <textarea id="comment-msg" placeholder="Comment"></textarea>
+            <div class="comment-error" id="comment-msg-err"></div>
             <button type="submit" id="postComment" value="Post a comment">Post a comment</button>
           </form>
         </section>

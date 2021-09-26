@@ -758,12 +758,12 @@ body {
 #commentEmail {
   width: 200px;
   height: 20px;
-  margin-top: 10px;
+  margin-top: 2px;
   opacity: 0.8;
 }
-#comment {
+#comment-msg {
   height: 100px;
-  margin-top: 10px;
+  margin-top: 2px;
   opacity: 0.8;
   margin-left: 0px;
 }
@@ -779,6 +779,12 @@ body {
   border-bottom: 1px solid #000;
   border-radius: 10px 10px 0 0;
   margin-top: 25px;
+}
+.comment-error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 0;
+  height: 21px;
 }
 
 @media (max-width: 768px) {
