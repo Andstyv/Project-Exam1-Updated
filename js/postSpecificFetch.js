@@ -151,20 +151,20 @@ function validateEmail(email) {
 function controlModal() {
   const modalBackground = document.querySelector(".blog-post-modal");
 
-  blogHeadImg.onclick = function () {
+  function toggleModal() {
     if (blogPostModal.style.display === "block") {
       blogPostModal.style.display = "none";
     } else {
       blogPostModal.style.display = "block";
     }
+  }
+
+  blogHeadImg.onclick = function () {
+    toggleModal();
   };
 
   modalBackground.onclick = function () {
-    if (blogPostModal.style.display === "block") {
-      blogPostModal.style.display = "none";
-    } else {
-      blogPostModal.style.display = "block";
-    }
+    toggleModal();
   };
 
   document.addEventListener("keydown", function (event) {
