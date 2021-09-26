@@ -76,6 +76,7 @@ searchBtn.onclick = function () {
 clearSearchBtn.onclick = function () {
   postsContainer.innerHTML = "";
   document.getElementById("blog-search").value = "";
+  loadMoreBtn.style.display = "block";
   getPosts(postsURL);
 };
 
