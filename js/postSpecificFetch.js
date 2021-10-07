@@ -11,6 +11,7 @@ const blogPostContent = document.querySelector(".blog-post-content");
 const blogPostDate = document.querySelector(".blog-post-date");
 const commentForm = document.querySelector(".new-comment-form");
 const blogPostModal = document.querySelector(".blog-post-modal");
+const blogPostLoader = document.querySelector(".blog-posts-loader");
 
 async function fetchBlogPost(url) {
   try {
@@ -20,6 +21,7 @@ async function fetchBlogPost(url) {
     let postDate = new Date(post.date);
     const postIMG = post._embedded["wp:featuredmedia"][0].source_url;
 
+    blogPostLoader.style.display = "none";
     blogHeadImg.innerHTML = `<img class="blog-post-img"src=${postIMG} alt="${post.title.rendered}"></img>`;
     blogPostModal.innerHTML = `<div class="blog-post-modal-txt">Press ESC or click outside of image to close</div>
     <img class="blog-post-modal-img"src=${postIMG} alt="${post.title.rendered}"></img>`;
