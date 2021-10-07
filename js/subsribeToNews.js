@@ -1,17 +1,17 @@
 const newsletterURL = "https://blog.styve.digital/wp-json/wp/v2/comments";
 const newsletterForm = document.querySelector(".footer-news-form");
 
-newsletterForm.addEventListener("submit", submitContactForm);
+newsletterForm.addEventListener("submit", validateNewsMail);
 
-function submitContactForm(e) {
+function submitNewsMail(e) {
   e.preventDefault();
-  const [newsMail] = e.target.elements;
+  const [newsMailArray] = e.target.elements;
 
   const newsletterData = {
     post: 75,
     author_name: "Newsletter Subscriber",
-    author_email: newsMail.value,
-    content: newsMail.value,
+    author_email: newsMailArray.value,
+    content: newsMailArray.value,
   };
   console.log(newsletterData);
 
@@ -35,4 +35,28 @@ function submitContactForm(e) {
     .catch((error) => {
       console.log(error);
     });
+}
+
+const newsMailInput = document.getElementById("newsMail");
+const newsMailError = document.getElementById("newsMailError");
+
+function validateNewsMail(event) {
+  event.preventDefault();
+
+  if (validateEmail(newsMailInput.value)) {
+    newsMailInput.style.border = "2px solid #60ab60";
+    newsMailError.innerHTML = "";
+  } else {
+    newsMailError.innerHTML = "Enter a valid e-mail address";
+    newsMailInput.style.border = "2px solid #ff7a7a";
+  }
+  if (validateEmail(newsMailInput.value)) {
+    submitNewsMail(event);
+  }
+}
+
+function validateEmail(email) {
+  const regEx = /\S+@\S+\.\S+/;
+  const emailMatch = regEx.test(email);
+  return emailMatch;
 }
