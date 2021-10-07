@@ -28,17 +28,20 @@
           <button class="blog-search-btn">Search</button>
           <button class="blog-clear-btn">Clear</button>
         </div>
-        <section class="blog-posts-grid"></section>
-        <div class="blog-posts-loader">Loading posts...</div>
+        <section class="blog-posts-grid"><div class="blog-posts-loader"></div></section>
+
         <button class="load-more-btn">Load More Posts</button>
         <footer class="blog-footer">
           <div class="blog-footer-news">
             <p class="footer-news-head">Keep updated</p>
-            <div class="footer-news-text">Sign up with your e-mail below to recieve notifications of new posts</div>
-            <form class="footer-news-form">
-              <input type="email" class="footer-news-input" id="newsMail" placeholder="Enter your e-mail" />
-              <button type="submit" class="footer-news-btn" value="Subscribe">Subscribe</button>
-            </form>
+            <label class="footer-news-text"
+              >Sign up with your e-mail below to recieve notifications of new posts
+              <form class="footer-news-form">
+                <input type="email" class="footer-news-input" id="newsMail" placeholder="Enter your e-mail" />
+                <button type="submit" class="footer-news-btn" value="Subscribe">Subscribe</button>
+              </form>
+              <div id="newsMailError"></div
+            ></label>
           </div>
           <div class="blog-footer-author">
             <p class="footer-author-head">About the author</p>

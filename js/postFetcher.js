@@ -25,12 +25,12 @@ async function getPosts(url) {
         const maxNumb = 6;
 
         let randomRotateIMG = genRandomRotation(minNumb, maxNumb);
-        blogPostLoader.innerHTML = "";
-
+        blogPostLoader.style.display = "none";
+        loadMoreBtn.style.display = "block";
         postsContainer.innerHTML += `
-  
+
     <div class="blog-post-card">
-    
+
     <div class="blog-posts-img-container" style="transform:rotate(${randomRotateIMG}deg)"><img class="blog-posts-img"src="${postIMG}" alt="${post.title.rendered}"></img></div>
     <a href="blog_post.html?id=${post.id}" class="blog-post-title-link">
     <div class="blog-posts-title">${post.title.rendered}</div></a>
@@ -44,7 +44,7 @@ async function getPosts(url) {
     }
   } catch (error) {
     console.log(error);
-    blogPostLoader.innerHTML = "";
+    blogPostLoader.style.display = "none";
     loadMoreBtn.style.display = "none";
     postsContainer.innerHTML = `<div class="blog-error-msg">ERROR: ${error}</div>`;
   }

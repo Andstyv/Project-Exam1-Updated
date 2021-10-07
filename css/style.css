@@ -389,6 +389,24 @@ body {
   flex-direction: column;
   min-height: 400px;
 }
+.blog-posts-loader {
+  margin: 50px auto;
+  border: 10px solid rgb(170, 170, 170);
+  border-top: 10px solid #f1bb4e;
+  animation: spin 2s linear infinite;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .blog-error-msg {
   color: #960000;
   margin: 40px auto;
@@ -446,9 +464,7 @@ body {
   width: 100px;
   cursor: pointer;
 }
-.blog-posts-loader {
-  margin: 20px auto;
-}
+
 .blog-post-card {
   border-bottom: 2px solid #cec478d5;
   padding: 24px 48px;
@@ -556,6 +572,7 @@ body {
   border-radius: 10px 10px 0 0;
 }
 .load-more-btn {
+  display: none;
   cursor: pointer;
   align-self: center;
   padding: 3px;
