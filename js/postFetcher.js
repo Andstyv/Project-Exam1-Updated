@@ -26,7 +26,6 @@ async function getPosts(url) {
 
         let randomRotateIMG = genRandomRotation(minNumb, maxNumb);
         blogPostLoader.style.display = "none";
-        loadMoreBtn.style.display = "block";
         postsContainer.innerHTML += `
 
     <div class="blog-post-card">
